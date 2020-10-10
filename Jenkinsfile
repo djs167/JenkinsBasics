@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Add..'
                 
                 sh """
                 chmod +x calC.sh  
@@ -19,14 +19,22 @@ pipeline {
                    """
             }
         }
-        stage('Test') {
+        stage('sub') {
             steps {
-                echo 'Testing..'
+                echo 'Sub..'
+                sh """
+                chmod +x calC.sh  
+                ./calC.sh "${First_Number}" "${Second_Number}" "${Operation}"
+                   """
             }
         }
-        stage('Deploy') {
+        stage('multi') {
             steps {
-                echo 'Deploy....'
+                echo 'Multi..'
+                sh """
+                chmod +x calC.sh  
+                ./calC.sh "${First_Number}" "${Second_Number}" "${Operation}"
+                   """
             }
         }
     }

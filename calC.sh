@@ -15,6 +15,9 @@ sub)
 multi)
      echo “$a*$b=$[a*b]”
 ;;
+div)
+     echo “$a/$b=$[a/b]”
+;;
 *)
      echo don\'t know
 ;;

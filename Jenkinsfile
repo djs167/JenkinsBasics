@@ -14,6 +14,7 @@ pipeline {
                     expression {
                         "${Operation}" == 'add'
                     }
+                }
             steps {
                 echo 'Add..'
                 sh """
@@ -21,13 +22,14 @@ pipeline {
                 ./calC.sh "${First_Number}" "${Second_Number}" "${Operation}"
                    """
             }
-        }
+        
       }       
         stage('sub'){ 
             when {
                     expression {
                         "${Operation}" == 'sub'
                     }
+                   } 
             steps {
                 echo 'Sub..'
                 sh """
@@ -35,13 +37,14 @@ pipeline {
                 ./calC.sh "${First_Number}" "${Second_Number}" "${Operation}"
                    """
             }
-        }
+        
     }
         stage('multi'){ 
             when {
                     expression {
                         "${Operation}" == 'multi'
                     }
+                }
             steps {
                 echo 'Multi..'
                 sh """
@@ -50,22 +53,21 @@ pipeline {
                    """
 
             }
-        }
+        
     }    
         stage('div'){ 
             when {
                     expression {
                         "${Operation}" == 'div'
                     }
+                }
             steps {
                 echo 'Div..'
                 sh """
                 chmod +x calC.sh  
                 ./calC.sh "${First_Number}" "${Second_Number}" "${Operation}"
                    """
-
             }
-        }    
+        }
     }
-  }
 }

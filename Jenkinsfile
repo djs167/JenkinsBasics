@@ -9,7 +9,7 @@ pipeline {
 
     }
     stages {
-        stage('Add') {
+        stage('Add') 
             when {
                     expression {
                         "${Operation}" == 'add'
@@ -22,7 +22,7 @@ pipeline {
                    """
             }
         }
-        stage('sub') {
+        stage('sub') 
             when {
                     expression {
                         "${Operation}" == 'sub'
@@ -35,7 +35,7 @@ pipeline {
                    """
             }
         }
-        stage('multi') {
+        stage('multi') 
             when {
                     expression {
                         "${Operation}" == 'multi'
@@ -49,7 +49,7 @@ pipeline {
 
             }
         }
-        stage('div') {
+        stage('div') 
             when {
                     expression {
                         "${Operation}" == 'div'
@@ -64,3 +64,5 @@ pipeline {
             }
         }    
     }
+}    
+
